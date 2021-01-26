@@ -1,4 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import Head from 'next/head';
 import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
@@ -30,6 +31,12 @@ const theme = db.theme;
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+      <meta property="og:image" content="https://cdn.hipwallpaper.com/i/97/22/HBQyO7.jpg" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="800" /> 
+      <meta property="og:image:height" content="600" />
+      </Head>
       <ThemeProvider theme={theme}>
       <GlobalStyle />
         <Component {...pageProps} />
