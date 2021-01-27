@@ -1,28 +1,18 @@
 {
     "bg": "https://cdn.hipwallpaper.com/i/97/22/HBQyO7.jpg",
-    "title": "Quiz CSS da Alura",
-    "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+    "title": "Don't Starve Together Quiz",
+    "description": "Teste seus conhecimentos sobre o Don't Starve Together",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
+        "image": "https://i.pinimg.com/originals/cb/70/bf/cb70bf91b724666cd09845d2355783df.jpg",
+        "title": "De que maneira NÃO é possível morrer no jogo?",
         "description": "Essa é pra aquecer",
         "answer": 2,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
-        ]
-      },
-      {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+          "de fome",
+          "na escuridão",
+          "de sede",
+          "de frio"
         ]
       }
     ],

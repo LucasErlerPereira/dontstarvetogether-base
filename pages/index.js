@@ -1,14 +1,15 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
+import Head from 'next/head';
 import db from '../db.json';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import Widget from '../src/components/Widget';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-
-
 
 export default function Home() {
   const router = useRouter();
@@ -16,36 +17,36 @@ export default function Home() {
 
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>{db.title}</title>
+      </Head>
       <QuizContainer>
         <Widget>
           <Widget.Header>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
-            <h1>Don't Starve Together Quiz</h1>
+            <h1>{db.title}</h1>
           </Widget.Header>
 
           <Widget.Content>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <p>Teste seus conhecimentos sobre o Don't Starve Together</p>
-          </Widget.Content>
-
-          <Widget.Form>
-            <form onSubmit={function (infosDoEvento) {
+            <form onSubmit={(infosDoEvento) => {
               infosDoEvento.preventDefault();
               router.push(`/quiz?name=${name}`);
             }}
             >
-              <input 
-                onChange={function (infosDoEvento) {
+              <Input
+                onChange={(infosDoEvento) => {
                   setName(infosDoEvento.target.value);
                 }}
-                placeholder="Fala seu nome"
+                placeholder="coloque seu nome"
+                value={name}
               />
-              <button type="submit" disabled={name.length === 0}>
-                COMEÇAR
-              </button>
+              <Button type="submit" disabled={name.length === 0}>
+                começar
+              </Button>
             </form>
-          </Widget.Form>
-
+          </Widget.Content>
         </Widget>
 
         <Widget>
