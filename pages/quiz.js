@@ -7,20 +7,31 @@ import Widget from '../src/components/Widget';
 import Button from '../src/components/Button';
 
 function LoadingWidget() {
+  const externalGif = db.external[0].gif_load;
   return (
     <Widget>
       <Widget.Header>
-        Carregando...
+        <h3>Carregando Quiz...aguarde</h3>
       </Widget.Header>
-
-      <Widget.Content>
-        [Desafio do Loading]
-      </Widget.Content>
+      <img
+        alt="Descrição"
+        style={{
+          width: '100%',
+          height: '200px',
+          objectFit: 'cover',
+        }}
+        src={externalGif}
+      />
     </Widget>
   );
 }
 
-function QuestionWidget({ totalQuestions, questionIndex, question, onSubmit }) {
+function QuestionWidget({
+  totalQuestions,
+  questionIndex,
+  question,
+  onSubmit,
+}) {
   const questionId = `question__${questionIndex}`;
 
   return (
@@ -88,6 +99,7 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
+  const external = db.external[0];
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -119,7 +131,25 @@ export default function QuizPage() {
 
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
-        {screenState === screenStates.RESULT && <div>Você acertou X questões, parabéns!</div>}
+        {screenState === screenStates.RESULT && (
+          <Widget>
+            <Widget.Header>
+              <h2>Parabéns por terminar o quiz!</h2>
+            </Widget.Header>
+              <img
+                alt="Descrição"
+                style={{
+                width: '100%',
+                height: '200px',
+                objectFit: 'cover',
+                }}
+                src={external.image_result}
+              />
+             <Widget.Content>
+               <p>Infelizmente esse Quiz é patrocinado pelos correios, por isso as respostas serão entregues somente na sexta.</p>
+              </Widget.Content> 
+          </Widget>
+        )}
       </QuizContainer>
     </QuizBackground>
   );

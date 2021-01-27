@@ -14,10 +14,38 @@
           "de sede",
           "de frio"
         ]
+      },
+      {
+        "image": "https://i.ytimg.com/vi/I5bGHdLXWZI/maxresdefault.jpg",
+        "title": "Qual é o nome da personagem vegetariana?",
+        "description": "quero ver acertarem",
+        "answer": 2,
+        "alternatives": [
+          "Wigfried",
+          "Willow",
+          "Wickerbottom",
+          "Wurt"
+        ]
+      },
+      {
+        "image": "https://static.wikia.nocookie.net/dont-starve-game/images/7/70/Boomerang_Hold.jpg",
+        "title": "Quais são os 3 itens usados para criar um boomerang?",
+        "description": "ta ficando difícil",
+        "answer": 2,
+        "alternatives": [
+          "teia, madeira e pedra",
+          "corda, tábua e carvão",
+          "tábua, teia e carvão",
+          "madeira, corda e flint"
+        ]
       }
+      
     ],
     "external": [
-      ""
+      {
+        "image_result": "https://pm1.narvii.com/7087/c503efa54cb2940898e5d4fac986acea4c61cd5br1-509-405v2_hq.jpg",
+        "gif_load": "https://38.media.tumblr.com/12e355faca44c3d84af978d42afddb98/tumblr_njxcc1edpR1rz3qybo1_500.gif"
+      }
     ],
     "theme": {
       "colors": {
