@@ -19,7 +19,7 @@
         "image": "https://i.ytimg.com/vi/I5bGHdLXWZI/maxresdefault.jpg",
         "title": "Qual é o nome da personagem vegetariana?",
         "description": "quero ver acertarem",
-        "answer": 2,
+        "answer": 3,
         "alternatives": [
           "Wigfried",
           "Willow",
@@ -43,7 +43,8 @@
     ],
     "external": [
       {
-        "image_result": "https://pm1.narvii.com/7087/c503efa54cb2940898e5d4fac986acea4c61cd5br1-509-405v2_hq.jpg",
+        "image_result": "https://steamuserimages-a.akamaihd.net/ugc/787481119609488721/2C5813E146A629970C0B3A858388381CFEB8E119/",
+        "image_fail": "https://pm1.narvii.com/7087/c503efa54cb2940898e5d4fac986acea4c61cd5br1-509-405v2_hq.jpg",
         "gif_load": "https://38.media.tumblr.com/12e355faca44c3d84af978d42afddb98/tumblr_njxcc1edpR1rz3qybo1_500.gif"
       }
     ],

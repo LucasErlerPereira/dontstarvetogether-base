@@ -6,8 +6,12 @@ const Widget = styled.div`
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme }) => theme.colors.mainBg};
+  opacity:0.8;
   border-radius: 4px;
   overflow: hidden;
+  @media screen and (max-width: 500px) {
+    opacity:1;
+  }  
   h1, h2, h3 {
     font-size: 16px;
     font-weight: 700;
@@ -27,7 +31,6 @@ Widget.Header = styled.header`
   align-items: center;
   padding: 18px 32px;
   background-color: ${({ theme }) => theme.colors.primary};
-  
   * {
     margin: 0;
   }
