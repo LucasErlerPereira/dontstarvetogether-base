@@ -1,49 +1,52 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import db from '../db.json';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizContainer from '../src/components/QuizContainer';
-import AlternativesForm from '../src/components/AlternativesForm';
-import Widget from '../src/components/Widget';
-import Button from '../src/components/Button';
+import Image from 'next/image';
+
+import db from '../../db.json';
+import QuizBackground from '../../src/components/QuizBackground';
+import QuizContainer from '../../src/components/QuizContainer';
+import AlternativesForm from '../../src/components/AlternativesForm';
+import Widget from '../../src/components/Widget';
+import BackLinkArrow from '../../src/components/BackLinkArrow';
+import Button from '../../src/components/Button';
 
 function LoadingWidget() {
-  const externalGif = db.external[0].gif_load;
+  // const externalGif = db.external[0].gif_load;
   return (
     <Widget>
       <Widget.Header>
         <h3>Carregando Quiz...aguarde</h3>
       </Widget.Header>
-      <img
-        alt="Descrição"
-        style={{
-          width: '100%',
-          height: '200px',
-          objectFit: 'cover',
-        }}
-        src={externalGif}
+      <Image
+        src="/assets/images/dst_loading.gif"
+        alt="gif de loading"
+        width={350}
+        height={200}
+        layout="responsive"
       />
     </Widget>
   );
 }
 
 function ResultWidget({ results }) {
-  const externalImageResult = db.external[0].image_result;
+  // const externalImageResult = db.external[0].image_result;
 
   return (
     <Widget>
       <Widget.Header>
+        <div>
+          <BackLinkArrow href="/" />
+          <span>voltar a home</span>
+        </div>
         <h2>Parabéns por terminar o quiz!</h2>
       </Widget.Header>
-      <img
-        alt="Descrição"
-        style={{
-          width: '100%',
-          height: '200px',
-          objectFit: 'cover',
-        }}
-        src={externalImageResult}
+      <Image
+        src="/assets/images/end_quiz.gif"
+        alt="gif de loading"
+        width={250}
+        height={200}
+        layout="responsive"
       />
       <Widget.Content>
         <h3>
@@ -54,6 +57,9 @@ function ResultWidget({ results }) {
 
             if (isRight) {
               return currentSum + 1;
+            }
+            if (currentSum === false) {
+              return 0;
             }
             return currentSum;
           })}
@@ -105,7 +111,7 @@ function QuestionWidget({
         alt="Descrição"
         style={{
           width: '100%',
-          height: '200px',
+          height: '250px',
           objectFit: 'cover',
         }}
         src={question.image}

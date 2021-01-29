@@ -5,8 +5,7 @@ const Widget = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.mainBg};
-  opacity:0.8;
+
   border-radius: 4px;
   overflow: hidden;
   @media screen and (max-width: 500px) {
@@ -27,6 +26,7 @@ const Widget = styled.div`
 
 Widget.Header = styled.header`
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 18px 32px;
@@ -34,10 +34,14 @@ Widget.Header = styled.header`
   * {
     margin: 0;
   }
+  span {
+    font-size: 12px;
+  }
 `;
 
 Widget.Content = styled.div`
   padding: 24px 32px 32px 32px;
+  background-color: ${({ theme }) => `${theme.colors.mainBg}99`};
   & > *:first-child {
     margin-top: 0;
   }
@@ -54,7 +58,7 @@ Widget.Topic = styled.a`
   outline: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.contrastText};
-  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  background-color: ${({ theme }) => `${theme.colors.primary}`};
   padding: 10px 15px;
   margin-bottom: 8px;
   cursor: pointer;

@@ -38,15 +38,35 @@
           "tábua, teia e carvão",
           "madeira, corda e flint"
         ]
+      },
+      {
+        "image": "https://static.wikia.nocookie.net/dont-starve-game/images/0/08/One-man_band.png",
+        "title": "Quais são os 3 itens usados para criar a one-man Band?",
+        "description": "essa eu quero ver",
+        "answer": 3,
+        "alternatives": [
+          "siléx, combustível de pesadelo e ouro",
+          "ouro, corda e pele de porco",
+          "silex, madeira e combustível de pesadelo",
+          "ouro, combustível de pesadelo e pele de porco"
+        ]
+      },
+      {
+        "image": "https://static.wikia.nocookie.net/dont-starve-game/images/3/3e/Wilson_wielding_the_walking_cane.png",
+        "title": "Qual é o dano base de uma walking cane?",
+        "description": "fácil ein",
+        "answer": 2,
+        "alternatives": [
+          "17",
+          "20",
+          "12",
+          "0"
+        ]
       }
-      
     ],
     "external": [
-      {
-        "image_result": "https://steamuserimages-a.akamaihd.net/ugc/787481119609488721/2C5813E146A629970C0B3A858388381CFEB8E119/",
-        "image_fail": "https://pm1.narvii.com/7087/c503efa54cb2940898e5d4fac986acea4c61cd5br1-509-405v2_hq.jpg",
-        "gif_load": "https://38.media.tumblr.com/12e355faca44c3d84af978d42afddb98/tumblr_njxcc1edpR1rz3qybo1_500.gif"
-      }
+        "https://harry-potter-quiz.lucianoweslen11.vercel.app/",
+        "https://aluraquiz-devsoutinho.omariosouto.vercel.app/"
     ],
     "theme": {
       "colors": {
@@ -54,8 +74,8 @@
         "secondary": "#29b6f6",
         "mainBg": "#111344",
         "contrastText": "#FFFBFF",
-        "wrong": "#FF5722",
-        "success": "#4CAF50"
+        "wrong": "#EA1F1F",
+        "success": "#61E294"
       },
       "borderRadius": "4px"
     }
