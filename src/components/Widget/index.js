@@ -52,6 +52,20 @@ Widget.Content = styled.div`
     list-style: none;
     padding: 0;
   }
+  li {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  ul#userAnswersList li.success_result {
+    background-color: ${({ theme }) => `${theme.colors.success}`};
+    padding: 10px 0;
+  }
+  ul#userAnswersList li.error_result {
+    background-color: ${({ theme }) => `${theme.colors.wrong}`};
+    padding: 10px 0;
+  }
 `;
 
 Widget.Topic = styled.a`

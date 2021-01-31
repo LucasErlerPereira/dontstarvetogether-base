@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import db from '../../db.json';
 import QuizBackground from '../../src/components/QuizBackground';
@@ -31,7 +32,7 @@ function LoadingWidget() {
 
 function ResultWidget({ results }) {
   // const externalImageResult = db.external[0].image_result;
-
+  const router = useRouter();
   return (
     <Widget>
       <Widget.Header>
@@ -39,7 +40,7 @@ function ResultWidget({ results }) {
           <BackLinkArrow href="/" />
           <span>voltar a home</span>
         </div>
-        <h2>Parabéns por terminar o quiz!</h2>
+        <h2>{`Parabéns ${router.query.name} por terminar o quiz!`}</h2>
       </Widget.Header>
       <Image
         src="/assets/images/end_quiz.gif"
@@ -49,34 +50,42 @@ function ResultWidget({ results }) {
         layout="responsive"
       />
       <Widget.Content>
-        <h3>
-          Sua pontuação final é
-          {' '}
-          {results.reduce((currentSum, currentResult) => {
-            const isRight = currentResult === true;
+        <Widget.Header>
+          <h3>
+            Sua pontuação final é
+            {' '}
+            {results.reduce((currentSum, currentResult) => {
+              const isRight = currentResult === true;
 
-            if (isRight) {
-              return currentSum + 1;
-            }
-            if (currentSum === false) {
-              return 0;
-            }
-            return currentSum;
-          })}
-        </h3>
+              if (isRight) {
+                return currentSum + 1;
+              }
+              if (currentSum === false) {
+                return 0;
+              }
+              return currentSum;
+            })}
+          </h3>
+        </Widget.Header>
 
-        <ul>
+        <ul id="userAnswersList">
           {results.map((result, index) => {
             const resultId = `result__${index}`;
 
             return (
-              <li key={resultId}>
+              <li
+                key={resultId}
+                className={result === true
+                  ? 'success_result'
+                  : 'error_result'}
+              >
                 #
                 {index + 1}
                 {' '}
                 {result === true
                   ? 'Acertou'
                   : 'Errou'}
+
               </li>
             );
           })}
